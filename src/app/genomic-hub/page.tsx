@@ -1,0 +1,15 @@
+import Link from "next/link";
+import { ArrowRight, Building2, Microscope, HeartPulse, Globe2 } from "lucide-react";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+const vision = [
+ {icon:Microscope,title:"Research and genomics",text:"A vision for advancing research that better represents African genetic diversity and supports more relevant scientific understanding."},
+ {icon:Building2,title:"Laboratory collaboration",text:"A proposed hub model involving collaboration with research laboratories, universities, health organisations, and genomic partners."},
+ {icon:HeartPulse,title:"Health education and referral",text:"A vision connecting genetic health awareness with appropriate professional guidance and referral pathways."},
+ {icon:Globe2,title:"African and global collaboration",text:"A platform for partnerships that support research, education, and community benefit across Africa and the diaspora."},
+];
+export default function GenomicHubPage(){return <><SiteHeader/><main>
+ <section className="page-hero"><div className="page-container"><span className="eyebrow">A LONG TERM VISION</span><h1>Genomic Lab &amp; Wellness Hub</h1><p className="hero-description">AGL’s Genomic Lab &amp; Wellness Hub is presented as a vision for African led genomic research, health education, collaboration, and more accessible pathways to genomic knowledge.</p><div className="hero-actions"><Link className="button button-gold" href="/partner-with-us">Discuss collaboration <ArrowRight size={18}/></Link><Link className="button button-dark" href="/our-work">Explore our work</Link></div></div></section>
+ <section className="section-pad"><div className="page-container"><div className="section-heading"><span className="eyebrow">THE VISION</span><h2>Building capacity through collaboration</h2><p>The following are proposed areas of focus described in the hub concept. They should not be read as confirmation that a laboratory, clinic, screening service, or testing facility is currently operating.</p></div><div className="resources-category-grid">{vision.map(({icon:Icon,title,text})=><article className="resources-category-card" key={title}><div className="resources-guide-icon"><Icon size={25}/></div><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+ <section className="section-pad campaign-section"><div className="page-container contact-details-layout"><div><h2>Who can contribute to the vision?</h2><p>AGL invites conversations with research laboratories, universities, health organisations, genomic platforms, and other potential collaborators whose work aligns with ethical, community centred genomic education and research.</p><Link className="text-link" href="/partner-with-us">Explore partnership opportunities <ArrowRight size={16}/></Link></div><div className="resources-guide-card"><h3>Interested in learning more?</h3><p>Share your organisation’s area of expertise and the kind of collaboration you would like to discuss.</p><Link className="text-link" href="/contact">Contact AGL <ArrowRight size={16}/></Link></div></div></section>
+ </main><SiteFooter/></>}

@@ -1,0 +1,11 @@
+import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+
+export default function Rooted30Page() {
+  return <><SiteHeader /><main>
+    <section className="page-hero"><div className="page-container"><p className="eyebrow">Global campaign</p><h1>Rooted30</h1><p className="hero-description">Reconnecting roots. Advancing health. Shaping the future.</p><p>Rooted30 is AfriGenetry Link’s proposed movement toward 2030, bringing together ancestry discovery, family health history awareness, genomic education, community participation, and opportunities for the next generation.</p><div className="hero-actions"><Link className="button button-gold" href="/our-work">Explore our work</Link><Link className="button button-dark" href="/get-involved">Get involved</Link></div></div></section>
+    <section className="section-pad"><div className="page-container"><div className="section-heading"><p className="eyebrow">The campaign vision</p><h2>Connect heritage, health, and opportunity</h2><p>Rooted30 brings AGL’s areas of focus into one campaign framework. Public targets and progress figures must be approved and verified before publication.</p></div><div className="resources-category-grid"><article className="resources-category-card"><h3>Heritage and identity</h3><p>Encourage learning about ancestry, family history, culture, and belonging.</p></article><article className="resources-category-card"><h3>Health awareness</h3><p>Support family health history conversations and accessible genomic education.</p></article><article className="resources-category-card"><h3>Education and participation</h3><p>Create pathways to learn, volunteer, collaborate, and contribute to a more inclusive future for genomics.</p></article></div></div></section>
+    <section className="campaign-section"><div className="page-container"><h2>Be part of the journey</h2><p>Explore current initiatives or contact AGL to discuss how you can contribute.</p><div className="hero-actions"><Link className="button button-gold" href="/get-involved">Ways to get involved</Link><Link className="button button-dark" href="/contact">Contact AGL</Link></div></div></section>
+  </main><SiteFooter /></>;
+}

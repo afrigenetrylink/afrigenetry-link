@@ -1,0 +1,11 @@
+import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+
+export default function CampusIdentityReconnectionTourPage() {
+  return <><SiteHeader /><main>
+    <section className="page-hero"><div className="page-container"><p className="eyebrow">GenAfrica Initiative</p><h1>Campus Identity &amp; Reconnection Tour</h1><p className="hero-description">Bringing conversations about ancestry, family history, DNA, heritage, identity, and belonging into campus communities.</p><p>The campus tour is designed to introduce participants to heritage education and the wider AGL NextGen community. Specific campus dates and activities should be announced only after they are confirmed.</p><div className="hero-actions"><Link className="button button-gold" href="/get-involved">Join AGL</Link><Link className="button button-dark" href="/events">Explore events</Link></div></div></section>
+    <section className="section-pad"><div className="page-container"><div className="section-heading"><p className="eyebrow">Campus conversations</p><h2>Explore identity, science, and community</h2><p>The tour connects learning with conversation and helps students explore questions about heritage and family stories in an accessible setting.</p></div><div className="resources-category-grid"><article className="resources-category-card"><h3>Ancestry and family history</h3><p>Explore how family stories, records, culture, and DNA can provide different kinds of clues.</p></article><article className="resources-category-card"><h3>Genetics education</h3><p>Build foundational understanding of DNA and its limitations without treating ancestry estimates as exact identity labels.</p></article><article className="resources-category-card"><h3>NextGen connection</h3><p>Discover educational, volunteer, and professional development opportunities as they become available.</p></article></div></div></section>
+    <section className="campaign-section"><div className="page-container"><h2>Bring a conversation to your campus</h2><p>Students, campus groups, and institutions can contact AGL to discuss possible collaboration.</p><Link className="button button-gold" href="/contact">Discuss a campus partnership</Link></div></section>
+  </main><SiteFooter /></>;
+}
