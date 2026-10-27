@@ -20,7 +20,7 @@ export default function EventPopup() {
   if (!isOpen || eventHasPassed) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-[#170f0c]/75 p-3 backdrop-blur-sm sm:p-6" role="presentation">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-[#493226]/60 p-3 backdrop-blur-sm sm:p-6" role="presentation">
       <section
         aria-labelledby="agl-event-popup-title"
         aria-describedby="agl-event-popup-description"
@@ -32,12 +32,12 @@ export default function EventPopup() {
           type="button"
           onClick={() => setIsOpen(false)}
           aria-label="Close event announcement"
-          className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-[#251813]/80 text-white transition hover:bg-[#251813] focus:outline-none focus:ring-2 focus:ring-[#c6a05b]"
+          className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-[#5c4032]/90 text-white transition hover:bg-[#493226] focus:outline-none focus:ring-2 focus:ring-[#c6a05b]"
         >
           <X size={20} aria-hidden="true" />
         </button>
 
-        <div className="bg-[#38251f] px-5 pb-7 pt-8 text-white sm:px-8 sm:pb-8 sm:pt-10">
+        <div className="bg-[#755846] px-5 pb-7 pt-8 text-white sm:px-8 sm:pb-8 sm:pt-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#e4c88f]">AfriGenetry Link invites you</p>
           <h2 id="agl-event-popup-title" className="max-w-xl pr-8 text-3xl font-semibold leading-tight sm:text-4xl">
             Dallas Community DNA Pop Up

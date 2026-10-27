@@ -2,9 +2,9 @@
 @import "tailwindcss";
 
 :root {
-  --agl-brown: #38251f;
-  --agl-brown-deep: #251813;
-  --agl-brown-soft: #5b4034;
+  --agl-brown: #8B6B55;
+  --agl-brown-deep: #6F5140;
+  --agl-brown-soft: #A18470;
   --agl-gold: #c6a05b;
   --agl-gold-light: #e5d0a2;
   --agl-cream: #f7f3eb;
