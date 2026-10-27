@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 
 import {
@@ -24,8 +22,6 @@ import {
 
   MoveUpRight,
 
-
-
   CalendarDays,
 
 } from "lucide-react";
@@ -33,8 +29,6 @@ import {
 import SiteHeader from "@/components/SiteHeader";
 
 import SiteFooter from "@/components/SiteFooter";
-
-
 
 const pillars = [
   {
@@ -66,8 +60,6 @@ const pillars = [
     icon: UsersRound,
   },
 ];
-
-
 
 const programs = [
   {
@@ -114,31 +106,7 @@ const programs = [
     className: "program-image-campus",
     number: "04",
   },
-  {
-    id: "community-dna",
-    category: "COMMUNITY & DNA EDUCATION",
-    title: "Community DNA Pop Up",
-    description:
-      "A community experience centred on DNA education, ancestry discovery, and family health awareness.",
-    link: "Explore the Community Pop Up",
-    href: "/events/dallas-community-dna-pop-up",
-    className: "program-image-community",
-    number: "05",
-  },
-  {
-    id: "dna-on-wheels",
-    category: "COMMUNITY OUTREACH",
-    title: "DNA On Wheels",
-    description:
-      "A mobile outreach initiative designed to bring DNA awareness and education into community settings.",
-    link: "Explore DNA On Wheels",
-    href: "/dna-on-wheels",
-    className: "program-image-wheels",
-    number: "06",
-  },
 ];
-
-
 
 export default function Home() {
 
@@ -147,8 +115,6 @@ export default function Home() {
     <>
 
       <SiteHeader />
-
-
 
       <main>
 
@@ -170,8 +136,6 @@ export default function Home() {
 
           <div className="hero-overlay" aria-hidden="true" />
 
-
-
           <div className="hero-content page-container">
 
             <div className="hero-copy">
@@ -182,8 +146,6 @@ export default function Home() {
 
               </span>
 
-
-
               <h1>
 
                 Your roots tell a story.
@@ -193,8 +155,6 @@ export default function Home() {
                 <span>Let&apos;s discover it.</span>
 
               </h1>
-
-
 
               <p className="hero-description">
 
@@ -207,8 +167,6 @@ export default function Home() {
                 opportunities that move our stories forward.
 
               </p>
-
-
 
               <div className="hero-actions">
 
@@ -226,8 +184,6 @@ export default function Home() {
 
               </div>
 
-
-
               <div className="hero-note">
 
                 <span className="hero-note-line" />
@@ -237,8 +193,6 @@ export default function Home() {
               </div>
 
             </div>
-
-
 
             <div className="hero-side-note" aria-hidden="true">
 
@@ -256,8 +210,6 @@ export default function Home() {
 
           </div>
 
-
-
           <a href="#mission" className="hero-scroll" aria-label="Scroll to our mission">
 
             <ArrowDown size={17} />
@@ -266,11 +218,7 @@ export default function Home() {
 
           </a>
 
-
-
         </section>
-
-
 
         <section className="mission-section section-pad" id="mission">
 
@@ -291,8 +239,6 @@ export default function Home() {
               </h2>
 
             </div>
-
-
 
             <div className="mission-copy">
 
@@ -327,8 +273,6 @@ export default function Home() {
             </div>
 
           </div>
-
-
 
           <div className="page-container gap-grid">
 
@@ -366,8 +310,6 @@ export default function Home() {
 
         </section>
 
-
-
         <section className="pillars-section section-pad" id="centers">
 
           <div className="page-container">
@@ -393,8 +335,6 @@ export default function Home() {
               </p>
 
             </div>
-
-
 
             <div className="pillars-grid">
 
@@ -444,8 +384,6 @@ export default function Home() {
 
         </section>
 
-
-
         <section className="work-section section-pad" id="work">
 
           <div className="page-container">
@@ -467,8 +405,6 @@ export default function Home() {
               </Link>
 
             </div>
-
-
 
             <div className="program-grid">
 
@@ -516,7 +452,7 @@ export default function Home() {
 
                     <p>{program.description}</p>
 
-                    <Link href="#get-involved" className="text-link">
+                    <Link href={program.href} className="text-link">
 
                       {program.link} <ArrowRight size={16} />
 
@@ -533,8 +469,6 @@ export default function Home() {
           </div>
 
         </section>
-
-
 
         <section className="campaign-section" id="rooted30">
 
@@ -568,13 +502,7 @@ export default function Home() {
 
             </p>
 
-            <p className="campaign-disclaimer">
-
-              Campaign targets are subject to leadership approval and
-
-              available resources.
-
-            </p>
+            
 
             <Link href="#get-involved" className="button button-gold">
 
@@ -585,8 +513,6 @@ export default function Home() {
           </div>
 
         </section>
-
-
 
         <section className="stories-section section-pad" id="stories">
 
@@ -609,8 +535,6 @@ export default function Home() {
               </Link>
 
             </div>
-
-
 
             <div className="stories-grid">
 
@@ -647,8 +571,6 @@ export default function Home() {
                 </div>
 
               </article>
-
-
 
               <div className="story-side">
 
@@ -716,8 +638,6 @@ export default function Home() {
 
         </section>
 
-
-
         <section className="tripleh-section section-pad" id="tripleh">
 
           <div className="page-container tripleh-layout">
@@ -745,8 +665,6 @@ export default function Home() {
               <span className="orbit-label orbit-label-three">HEALING</span>
 
             </div>
-
-
 
             <div className="tripleh-copy">
 
@@ -802,8 +720,6 @@ export default function Home() {
 
         </section>
 
-
-
         <section className="events-section section-pad" id="events">
 
           <div className="page-container events-layout">
@@ -831,8 +747,6 @@ export default function Home() {
               </Link>
 
             </div>
-
-
 
             <article className="event-card">
 
@@ -890,8 +804,6 @@ export default function Home() {
 
         </section>
 
-
-
         <section className="get-involved-section" id="get-involved">
 
           <div className="page-container get-involved-content">
@@ -942,8 +854,6 @@ export default function Home() {
 
         </section>
 
-
-
         <section className="donate-section" id="donate">
 
           <div className="page-container donate-layout">
@@ -975,8 +885,6 @@ export default function Home() {
         </section>
 
       </main>
-
-
 
       <SiteFooter />
 

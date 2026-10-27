@@ -28,14 +28,21 @@ export default function EventPopup() {
         role="dialog"
         className="relative my-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-[#c6a05b]/50 bg-[#fffdf8] text-[#38251f] shadow-2xl"
       >
+
         <button
           type="button"
           onClick={() => setIsOpen(false)}
           aria-label="Close event announcement"
-          className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-[#5c4032]/90 text-white transition hover:bg-[#493226] focus:outline-none focus:ring-2 focus:ring-[#c6a05b]"
+          className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/50 bg-[#493226] text-white shadow-md transition-colors duration-200 hover:bg-[#251813] focus:outline-none focus:ring-2 focus:ring-[#c6a05b] focus:ring-offset-2"
         >
-          <X size={20} aria-hidden="true" />
+          <X
+            size={20}
+            color="#FFFFFF"
+            strokeWidth={2.5}
+            aria-hidden="true"
+          />
         </button>
+
 
         <div className="bg-[#755846] px-5 pb-7 pt-8 text-white sm:px-8 sm:pb-8 sm:pt-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#e4c88f]">AfriGenetry Link invites you</p>

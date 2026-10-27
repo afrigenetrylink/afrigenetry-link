@@ -2,18 +2,16 @@
 @import "tailwindcss";
 
 :root {
-  --agl-brown: #8B6B55;
-  --agl-brown-deep: #6F5140;
-  --agl-brown-soft: #A18470;
-  --agl-gold: #c6a05b;
-  --agl-gold-light: #e5d0a2;
-  --agl-cream: #f7f3eb;
-  --agl-paper: #fffdf8;
-  --agl-ink: #29221e;
-  --agl-muted: #776e66;
-  --agl-line: #e7dfd3;
-  --background: var(--agl-cream);
-  --foreground: var(--agl-ink);
+  --agl-brown: #6B4B3A;
+  --agl-brown-deep: #493226;
+  --agl-brown-soft: #87664F;
+  --agl-gold: #C6A05B;
+  --agl-gold-light: #E5D0A2;
+  --agl-cream: #FAF6EF;
+  --agl-paper: #FFFEFB;
+  --agl-ink: #29221E;
+  --agl-muted: #776E66;
+  --agl-line: #E7DFD3;
 }
 
 @theme inline {
@@ -749,6 +747,13 @@ h2 em,
 .program-image-fellowship {
   background-image: url("https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80");
 }
+
+.program-image-campus {
+  background-image: url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80");
+  background-position: center;
+  background-size: cover;
+}
+
 
 .program-image-number {
   position: absolute;
@@ -5442,5 +5447,926 @@ main [id] {
   .footer-socials {
     position: relative;
     left: -64px;
+  }
+}
+
+/* Homepage hero: image above text on every screen */
+.hero#about {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  background: var(--agl-brown);
+  color: var(--agl-ink);
+}
+
+.hero#about .home-hero-image {
+  position: relative;
+  inset: auto;
+  flex: none;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: none;
+  transform: none;
+  filter: none;
+}
+
+.hero#about .home-hero-mobile-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero#about .hero-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+.hero#about .hero-copy {
+  width: 100%;
+  max-width: 850px;
+}
+
+.hero#about .eyebrow-light {
+  color: var(--agl-brown-soft);
+}
+
+.hero#about h1 {
+  color: var(--agl-brown);
+}
+
+.hero#about .hero-description {
+  max-width: 760px;
+  color: var(--agl-muted);
+}
+
+.hero#about .hero-side-note,
+.hero#about .hero-scroll,
+.hero#about .hero-index,
+.hero#about .hero-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero#about .home-hero-mobile-image {
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .hero#about .hero-content {
+    padding: 2rem 1.25rem 2.5rem;
+  }
+
+  .hero#about .hero-copy {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero#about h1 {
+    font-size: clamp(2rem, 8vw, 3.25rem);
+    line-height: 1.1;
+    overflow-wrap: break-word;
+  }
+
+  .hero#about .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+/* HOMEPAGE HERO: image first, copy below, with readable contrast on every screen */
+.hero#about {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+  color: var(--agl-ink);
+  background: var(--agl-paper);
+}
+
+.hero#about .hero-image.home-hero-image {
+  position: relative;
+  inset: auto;
+  order: 0;
+  width: 100%;
+  height: clamp(280px, 43vw, 620px);
+  flex: 0 0 auto;
+  overflow: hidden;
+  transform: none;
+  filter: none;
+  background-image: none;
+}
+
+.hero#about .home-hero-mobile-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero#about .hero-overlay {
+  display: none;
+}
+
+.hero#about .hero-content {
+  position: relative;
+  order: 1;
+  z-index: 2;
+  display: block;
+  width: min(1240px, calc(100% - 80px));
+  padding: clamp(2.5rem, 6vw, 5.5rem) 0;
+  color: var(--agl-ink);
+}
+
+.hero#about .hero-copy {
+  width: min(850px, 100%);
+}
+
+.hero#about .eyebrow-light {
+  color: #76552f;
+}
+
+.hero#about h1 {
+  max-width: 900px;
+  color: var(--agl-brown);
+  font-size: clamp(2.75rem, 6vw, 5.4rem);
+  line-height: 1.06;
+  overflow-wrap: break-word;
+}
+
+.hero#about h1 span {
+  color: #8b642f;
+}
+
+.hero#about .hero-description {
+  max-width: 720px;
+  color: #51463e;
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  line-height: 1.85;
+}
+
+.hero#about .button-outline-light {
+  color: var(--agl-brown);
+  border-color: #a99a87;
+  background: transparent;
+}
+
+.hero#about .button-outline-light:hover {
+  color: var(--agl-brown-deep);
+  border-color: var(--agl-gold);
+  background: #f2e9d8;
+}
+
+.hero#about .hero-note {
+  color: #65584d;
+}
+
+.hero#about .hero-side-note,
+.hero#about .hero-scroll,
+.hero#about .hero-index {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero#about .hero-image.home-hero-image {
+    height: auto;
+    max-height: none;
+  }
+
+  .hero#about .home-hero-mobile-image {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .hero#about .hero-content {
+    width: 100%;
+    padding: 2.25rem 1.25rem 2.75rem;
+  }
+
+  .hero#about h1 {
+    margin-top: 1rem;
+    font-size: clamp(2.2rem, 8.5vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  .hero#about .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero#about .hero-actions .button {
+    max-width: 100%;
+  }
+
+  .hero#about .hero-note {
+    align-items: flex-start;
+    margin-top: 1.75rem;
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero#about .hero-image.home-hero-image {
+    height: clamp(340px, 43vw, 620px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero#about *,
+  .hero#about *::before,
+  .hero#about *::after {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* Rooted30 campaign readability fix */
+
+.campaign-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.campaign-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(24, 15, 12, 0.97) 0%,
+    rgba(24, 15, 12, 0.91) 45%,
+    rgba(24, 15, 12, 0.72) 72%,
+    rgba(24, 15, 12, 0.48) 100%
+  );
+  pointer-events: none;
+}
+
+.campaign-content {
+  position: relative;
+  z-index: 2;
+}
+
+.campaign-kicker {
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.campaign-description {
+  max-width: 520px;
+  color: #ffffff !important;
+  font-size: 1rem;
+  line-height: 1.9;
+  font-weight: 400;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 768px) {
+  .campaign-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(24, 15, 12, 0.96) 0%,
+      rgba(24, 15, 12, 0.88) 100%
+    );
+  }
+
+  .campaign-description {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* =========================================
+   AGL GLOBAL TYPOGRAPHY & READABILITY
+   ========================================= */
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Paragraphs and descriptive text */
+
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Main headings */
+
+h1 {
+  font-size: clamp(2.75rem, 5.5vw, 5.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.35;
+}
+
+/* Hero descriptions */
+
+.hero-description {
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.85;
+}
+
+/* Section introductions */
+
+.section-heading > p,
+.mission-copy p,
+.lead-copy {
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+/* Programme and content cards */
+
+.program-content p,
+.pillar-card p,
+.story-mini p,
+.story-feature-copy p,
+.tripleh-copy p,
+.event-card > p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Small labels and category text */
+
+.eyebrow,
+.campaign-kicker,
+.gap-index,
+.program-image-label,
+.program-image-number,
+.event-card-top,
+.status-label {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* Navigation */
+
+nav a,
+header a {
+  line-height: 1.6;
+}
+
+/* Buttons and text links */
+
+.button,
+.text-link,
+.pillar-link {
+  font-size: 0.975rem;
+  line-height: 1.6;
+}
+
+/* Footer readability */
+
+footer p,
+footer a,
+footer li {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* Mobile typography */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 9vw, 3.5rem);
+    line-height: 1.12;
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 7vw, 2.6rem);
+    line-height: 1.22;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  p,
+  .hero-description,
+  .section-heading > p,
+  .mission-copy p,
+  .lead-copy,
+  .program-content p,
+  .pillar-card p,
+  .story-mini p,
+  .story-feature-copy p,
+  .tripleh-copy p,
+  .event-card > p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .eyebrow,
+  .campaign-kicker,
+  .gap-index,
+  .program-image-label,
+  .event-card-top,
+  .status-label {
+    font-size: 0.75rem;
+  }
+
+  .button,
+  .text-link {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================================================
+   AGL FINAL SITE-WIDE TYPOGRAPHY OVERRIDE
+   Keep this section at the very bottom of globals.css.
+   This intentionally overrides older, smaller font rules.
+   ========================================================= */
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-size: 17px !important;
+  line-height: 1.8 !important;
+}
+
+/* Main headings */
+h1 {
+  line-height: 1.12;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem) !important;
+  line-height: 1.2 !important;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.65rem) !important;
+  line-height: 1.4 !important;
+}
+
+/* General reading text */
+p,
+li,
+dd,
+dt,
+blockquote {
+  font-size: 1.0625rem !important;
+  line-height: 1.8 !important;
+}
+
+/* Hero and section introductions */
+.hero-description,
+.section-heading > p,
+.mission-copy p,
+.mission-copy .lead-copy,
+.lead-copy,
+.campaign-description,
+.campaign-disclaimer,
+.tripleh-copy > p,
+.events-layout > div:first-child > p,
+.get-involved-content > p {
+  font-size: 1.0625rem !important;
+  line-height: 1.85 !important;
+}
+
+/* Programme, pillar, story and event cards */
+.program-content p,
+.pillar-card p,
+.story-mini p,
+.story-feature-copy p,
+.event-card > p,
+.gap-item p,
+.content-list p,
+.resources-category-card p {
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+}
+
+/* Small labels: larger but still visually secondary */
+.eyebrow,
+.campaign-kicker,
+.gap-index,
+.program-image-label,
+.program-image-number,
+.event-card-top,
+.event-card-top span,
+.status-label,
+.hero-note,
+.hero-side-note,
+.hero-scroll,
+.hero-index,
+.pillar-card-top span {
+  font-size: 0.8125rem !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.06em;
+}
+
+/* Navigation, links and buttons */
+.nav-trigger,
+.dropdown-panel a,
+.donate-button,
+.button,
+.text-link,
+.pillar-link,
+.footer-donate {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.announcement-bar {
+  font-size: 0.8125rem !important;
+  line-height: 1.5 !important;
+}
+
+.brand-copy,
+.brand-copy strong,
+.footer-logo > span:last-child {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+.brand-copy > span,
+.footer-logo small {
+  font-size: 0.75rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Footer text and legal links */
+.footer-description,
+.footer-column a,
+.footer-donate,
+.footer-newsletter p,
+.footer-bottom > p,
+.legal-links a,
+.newsletter-form input {
+  font-size: 0.9375rem !important;
+  line-height: 1.8 !important;
+}
+
+.footer-column h2 {
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Form fields */
+input,
+select,
+textarea {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Tablet and mobile */
+@media (max-width: 850px) {
+  .nav-trigger,
+  .dropdown-panel a,
+  .donate-button {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px !important;
+  }
+
+  p,
+  li,
+  dd,
+  dt,
+  blockquote,
+  .hero-description,
+  .section-heading > p,
+  .mission-copy p,
+  .mission-copy .lead-copy,
+  .lead-copy,
+  .campaign-description,
+  .campaign-disclaimer,
+  .tripleh-copy > p,
+  .events-layout > div:first-child > p,
+  .get-involved-content > p,
+  .program-content p,
+  .pillar-card p,
+  .story-mini p,
+  .story-feature-copy p,
+  .event-card > p,
+  .gap-item p,
+  .content-list p,
+  .resources-category-card p {
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+  }
+
+  .eyebrow,
+  .campaign-kicker,
+  .gap-index,
+  .program-image-label,
+  .event-card-top,
+  .event-card-top span,
+  .status-label,
+  .hero-note,
+  .hero-scroll,
+  .hero-index,
+  .pillar-card-top span {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.04em;
+  }
+
+  .button,
+  .text-link,
+  .nav-trigger,
+  .dropdown-panel a,
+  .donate-button {
+    font-size: 0.95rem !important;
+  }
+
+  .footer-description,
+  .footer-column a,
+  .footer-donate,
+  .footer-newsletter p,
+  .footer-bottom > p,
+  .legal-links a {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    width: calc(100% - 32px);
+  }
+
+  body {
+    font-size: 16px !important;
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 7vw, 2.5rem) !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  .eyebrow,
+  .campaign-kicker,
+  .gap-index,
+  .program-image-label,
+  .event-card-top,
+  .status-label {
+    font-size: 0.75rem !important;
+  }
+}
+
+
+/* Scroll to Top button */
+.scroll-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+}
+
+/* Mobile and tablet positioning */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    right: 16px;
+    bottom: 90px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .scroll-to-top {
+    right: 14px;
+    bottom: 100px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .scroll-to-top {
+    right: 12px;
+    bottom: 110px;
+  }
+}
+
+
+
+/* =========================================
+   AGL WARMER, LIGHTER BROWN FINISH
+   Hero, footer, and navigation Donate button
+   ========================================= */
+
+:root {
+  --agl-brown: #765743;
+  --agl-brown-deep: #594237;
+  --agl-brown-soft: #94745D;
+  --agl-gold: #C9A15B;
+  --agl-gold-light: #E8D5AF;
+  --agl-cream: #FAF6EF;
+  --agl-paper: #FFFEFB;
+  --agl-ink: #29221E;
+  --agl-muted: #776E66;
+  --agl-line: #E7DFD3;
+}
+
+/* Lighten the hero image overlay without losing text contrast */
+.hero {
+  background-color: #594237;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(49 34 27 / 78%) 0%,
+      rgb(49 34 27 / 62%) 45%,
+      rgb(49 34 27 / 20%) 100%
+    ),
+    linear-gradient(0deg, rgb(49 34 27 / 18%), transparent 40%);
+}
+
+/* Softer overlay on small screens */
+@media (max-width: 600px) {
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgb(49 34 27 / 76%) 0%,
+      rgb(49 34 27 / 58%) 100%
+    );
+  }
+}
+
+/* Reduce the visual heaviness of the campaign section */
+.campaign-section {
+  background-color: #594237;
+}
+
+.campaign-overlay {
+  background: linear-gradient(
+    90deg,
+    rgb(49 34 27 / 82%) 0%,
+    rgb(49 34 27 / 64%) 53%,
+    rgb(49 34 27 / 22%) 100%
+  );
+}
+
+/* Warm, medium brown instead of near-black brown */
+.site-footer {
+  color: #F7F0E6;
+  background: #594237;
+}
+
+/* Softer footer dividers */
+.footer-newsletter {
+  border-top-color: rgb(255 255 255 / 16%);
+  border-bottom-color: rgb(255 255 255 / 16%);
+}
+
+/* Make footer text a little clearer against the lighter brown */
+.footer-description,
+.footer-newsletter p {
+  color: #E0D2C3;
+}
+
+.footer-column a,
+.legal-links a {
+  color: #E8DCCE;
+}
+
+.footer-bottom > p {
+  color: #D2C1B1;
+}
+
+/* Refined Donate button in the main navigation */
+.donate-button {
+  color: #30231A;
+  background: #C9A15B;
+  border: 1px solid #C9A15B;
+  border-radius: 3px;
+  box-shadow: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.donate-button:hover {
+  color: #30231A;
+  background: #E8D5AF;
+  border-color: #E8D5AF;
+  transform: translateY(-1px);
+}
+
+.donate-button:focus-visible {
+  outline: 3px solid #C9A15B;
+  outline-offset: 4px;
+}
+
+/* Keep the mobile Donate button clear and comfortable to tap */
+@media (max-width: 850px) {
+  .donate-button {
+    min-height: 48px;
+    padding: 12px 18px;
+    background: #C9A15B;
+    color: #30231A;
+  }
+
+  .donate-button:hover {
+    background: #E8D5AF;
+    color: #30231A;
+  }
+}
+
+/* Slightly softer brown blocks used by featured story and calls to action */
+.story-feature {
+  background-color: #765743;
+}
+
+.get-involved-section {
+  background:
+    radial-gradient(ellipse at 90% 20%, rgb(201 161 91 / 17%), transparent 40%),
+    #765743;
+}
+
+/* Retain contrast on dark sections */
+.hero,
+.campaign-section,
+.get-involved-section,
+.site-footer {
+  color: #FFFEFB;
+}
+
+/* FINAL FIX: About page hero uses more specific #about selectors */
+.hero#about {
+  background-color: #594237 !important;
+}
+
+.hero#about .hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(49 34 27 / 66%) 0%,
+      rgb(49 34 27 / 48%) 48%,
+      rgb(49 34 27 / 14%) 100%
+    ),
+    linear-gradient(0deg, rgb(49 34 27 / 12%), transparent 42%) !important;
+}
+
+@media (max-width: 600px) {
+  .hero#about .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgb(49 34 27 / 68%) 0%,
+      rgb(49 34 27 / 48%) 100%
+    ) !important;
   }
 }
