@@ -6344,29 +6344,3 @@ textarea {
 .site-footer {
   color: #FFFEFB;
 }
-
-/* FINAL FIX: About page hero uses more specific #about selectors */
-.hero#about {
-  background-color: #594237 !important;
-}
-
-.hero#about .hero-overlay {
-  background:
-    linear-gradient(
-      90deg,
-      rgb(49 34 27 / 66%) 0%,
-      rgb(49 34 27 / 48%) 48%,
-      rgb(49 34 27 / 14%) 100%
-    ),
-    linear-gradient(0deg, rgb(49 34 27 / 12%), transparent 42%) !important;
-}
-
-@media (max-width: 600px) {
-  .hero#about .hero-overlay {
-    background: linear-gradient(
-      90deg,
-      rgb(49 34 27 / 68%) 0%,
-      rgb(49 34 27 / 48%) 100%
-    ) !important;
-  }
-}
