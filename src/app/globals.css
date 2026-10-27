@@ -2337,28 +2337,41 @@ canvas {
 .about-hero {
   position: relative;
   overflow: hidden;
-  color: var(--paper, #fffdf8);
-  background: var(--deep-brown, #251813);
+  color: var(--agl-brown-deep, #493226);
+  background: var(--agl-cream, #FAF6EF);
   isolation: isolate;
 }
 
 .about-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      ellipse at 82% 45%,
-      rgba(198, 160, 91, 0.17),
-      transparent 42%
-    ),
-    linear-gradient(
-      115deg,
-      rgba(37, 24, 19, 0.2),
-      rgba(37, 24, 19, 0.96)
-    );
+  content: none;
+}
+
+/* Match the warm cream background used by Stories & Insights.
+   Keep text dark and readable while preserving the gold accents. */
+.about-page .eyebrow-light {
+  color: #805b27;
+}
+
+.about-page .about-hero-copy > p,
+.about-page .about-cta-content > div:first-child > p {
+  color: #51463e;
+}
+
+.about-page .button-outline-light {
+  color: var(--agl-brown-deep, #493226);
+  border-color: rgba(73, 50, 38, 0.45);
+  background: transparent;
+}
+
+.about-page .button-outline-light:hover {
+  color: var(--agl-brown-deep, #493226);
+  border-color: var(--agl-gold, #C6A05B);
+  background: rgba(198, 160, 91, 0.12);
+}
+
+.about-page .about-hero-bottom {
+  border-top-color: rgba(73, 50, 38, 0.16);
+  color: #51463e;
 }
 
 .about-hero-layout {
@@ -2596,8 +2609,8 @@ canvas {
 /* Purpose */
 
 .about-purpose {
-  color: var(--paper, #fffdf8);
-  background: var(--chocolate, #38251f);
+  color: var(--agl-brown-deep, #493226);
+  background: var(--agl-cream, #FAF6EF);
 }
 
 .about-purpose-heading {
@@ -2614,15 +2627,15 @@ canvas {
 
 .about-purpose-heading > p {
   max-width: 620px;
-  color: rgba(255, 253, 248, 0.76);
+  color: #51463e;
   line-height: 1.85;
 }
 
 .about-purpose-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid rgba(255, 253, 248, 0.2);
-  border-bottom: 1px solid rgba(255, 253, 248, 0.2);
+  border-top: 1px solid rgba(73, 50, 38, 0.18);
+  border-bottom: 1px solid rgba(73, 50, 38, 0.18);
 }
 
 .about-purpose-grid article {
@@ -2632,7 +2645,7 @@ canvas {
 
 .about-purpose-grid article + article {
   padding-left: 26px;
-  border-left: 1px solid rgba(255, 253, 248, 0.2);
+  border-left: 1px solid rgba(73, 50, 38, 0.18);
 }
 
 .about-purpose-grid article > span {
@@ -2648,7 +2661,7 @@ canvas {
 }
 
 .about-purpose-grid p {
-  color: rgba(255, 253, 248, 0.73);
+  color: #51463e;
   font-size: 14px;
   line-height: 1.85;
 }
@@ -2807,14 +2820,8 @@ canvas {
 /* Final call to action */
 
 .about-cta {
-  color: var(--paper, #fffdf8);
-  background:
-    radial-gradient(
-      ellipse at 90% 20%,
-      rgba(198, 160, 91, 0.17),
-      transparent 38%
-    ),
-    var(--deep-brown, #251813);
+  color: var(--agl-brown-deep, #493226);
+  background: var(--agl-cream, #FAF6EF);
 }
 
 .about-cta-content {
@@ -3026,8 +3033,11 @@ canvas {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  color: #fffdf8;
-  background-color: #251813;
+  color: #594237;
+  background-color: #FAF6EF;
+  background-image:
+    radial-gradient(circle at 88% 45%, rgba(198, 160, 91, 0.12), transparent 27%),
+    linear-gradient(110deg, #FFFEFB 0%, #FAF6EF 62%, #F5EEDF 100%);
 }
 
 .about-page .about-hero::before {
@@ -3050,7 +3060,7 @@ canvas {
 
 .about-page .about-hero-copy h1 {
   margin-block: 24px;
-  color: #fffdf8;
+  color: #594237;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(42px, 5.3vw, 72px);
   font-weight: 400;
@@ -3060,7 +3070,7 @@ canvas {
 
 .about-page .about-hero-copy > p {
   max-width: 600px;
-  color: #e8dfd2;
+  color: #51463e;
   font-size: 16px;
   line-height: 1.85;
 }
@@ -3083,13 +3093,13 @@ canvas {
 }
 
 .about-page .about-hero-actions .button-outline-light {
-  color: #fffdf8;
-  border-color: #c6a05b;
-  background: transparent;
+  color: #594237;
+  border-color: #C9A15B;
+  background: rgba(255, 254, 251, 0.55);
 }
 
 .about-page .about-hero-bottom {
-  border-top: 1px solid rgb(255 253 248 / 15%);
+  border-top: 1px solid rgba(89, 66, 55, 0.16);
 }
 
 .about-page .about-intro-layout {
@@ -6343,4 +6353,186 @@ textarea {
 .get-involved-section,
 .site-footer {
   color: #FFFEFB;
+}
+
+
+
+/* AGL About page: slightly richer Stories & Insights cream hero.
+   Scoped rules stay last to override legacy duplicates without changing text styling. */
+.about-page .about-hero {
+  color: #594237 !important;
+  background-color: #F0E6D5 !important;
+  background-image:
+    radial-gradient(circle at 88% 45%, rgba(198, 160, 91, 0.16), transparent 32%),
+    linear-gradient(110deg, #F7F0E5 0%, #F0E6D5 62%, #EDE0CB 100%) !important;
+}
+
+.about-page .about-hero::before {
+  content: none !important;
+  background: none !important;
+}
+
+.about-page .about-hero-copy h1 {
+  color: #594237 !important;
+}
+
+.about-page .about-hero-copy > p {
+  color: #51463e !important;
+}
+
+.about-page .about-hero .eyebrow,
+.about-page .about-hero .eyebrow-light {
+  color: #805b27 !important;
+}
+
+.about-page .about-hero .button-outline-light {
+  color: #594237 !important;
+  border-color: #C9A15B !important;
+  background: rgba(255, 254, 251, 0.55) !important;
+}
+
+.about-page .about-hero-bottom {
+  border-top-color: rgba(89, 66, 55, 0.16) !important;
+}
+
+.about-page .about-purpose {
+  color: #594237 !important;
+  background: #FAF6EF !important;
+}
+
+.about-page .about-purpose-heading > p,
+.about-page .about-purpose-grid p {
+  color: #51463e !important;
+}
+
+.about-page .about-purpose-grid {
+  border-top-color: rgba(89, 66, 55, 0.18) !important;
+  border-bottom-color: rgba(89, 66, 55, 0.18) !important;
+}
+
+.about-page .about-purpose-grid article + article {
+  border-left-color: rgba(89, 66, 55, 0.18) !important;
+}
+
+.about-page .about-cta {
+  color: #594237 !important;
+  background: #FAF6EF !important;
+}
+
+.about-page .about-cta h2 {
+  color: #594237 !important;
+}
+
+.about-page .about-cta-content > div:first-child > p {
+  color: #51463e !important;
+}
+
+.about-page .about-cta .button-outline-light {
+  color: #594237 !important;
+  border-color: rgba(89, 66, 55, 0.45) !important;
+  background: rgba(255, 254, 251, 0.55) !important;
+}
+
+@media (max-width: 650px) {
+  .about-page .about-hero {
+    background-color: #F0E6D5 !important;
+    background-image:
+      radial-gradient(circle at 85% 78%, rgba(198, 160, 91, 0.14), transparent 32%),
+      linear-gradient(180deg, #F7F0E5 0%, #F0E6D5 100%) !important;
+  }
+}
+
+
+
+/* FINAL ABOUT HERO CONTRAST FIX
+   Keep the decorative circles clearly visible on the cream background
+   and make the ROOTED IN HERITAGE tagline a strong brown. */
+.about-page .about-hero-bottom,
+.about-page .about-hero-bottom > .page-container {
+  color: #493226 !important;
+  opacity: 1 !important;
+}
+
+.about-page .about-hero-bottom > .page-container > span:first-child,
+.about-page .about-hero-bottom > .page-container > span:last-child,
+.about-page .about-hero-bottom .eyebrow,
+.about-page .about-hero-bottom .eyebrow-light,
+.about-page .about-hero-bottom p,
+.about-page .about-hero-bottom strong {
+  color: #493226 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* Increase all three circular outlines and prevent them from fading
+   into the warm cream background. */
+.about-page .about-hero-art {
+  isolation: isolate;
+}
+
+.about-page .about-art-ring {
+  display: block !important;
+  border-width: 2px !important;
+  border-color: #A77B35 !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 0 1px rgba(73, 50, 38, 0.08) !important;
+}
+
+.about-page .about-art-ring-one {
+  border-style: solid !important;
+  border-color: #8D632D !important;
+}
+
+.about-page .about-art-ring-two {
+  border-style: solid !important;
+  border-color: #A77B35 !important;
+}
+
+.about-page .about-art-ring-three {
+  border-style: dashed !important;
+  border-width: 2px !important;
+  border-color: #A77B35 !important;
+}
+
+.about-page .about-art-center {
+  border: 2px solid #C6A05B !important;
+  background: #493226 !important;
+  opacity: 1 !important;
+  box-shadow: 0 12px 32px rgba(73, 50, 38, 0.2) !important;
+}
+
+.about-page .about-art-label {
+  color: #FFFEFB !important;
+  border-color: #A77B35 !important;
+  background: #493226 !important;
+  opacity: 1 !important;
+  box-shadow: 0 4px 12px rgba(73, 50, 38, 0.12) !important;
+}
+
+/* Preserve strong contrast and visibility on smaller screens too. */
+@media (max-width: 650px) {
+  .about-page .about-art-ring {
+    border-width: 2px !important;
+  }
+
+  .about-page .about-hero-bottom > .page-container {
+    gap: 10px;
+    color: #493226 !important;
+    letter-spacing: 0.08em;
+  }
+
+  .about-page .about-hero-bottom > .page-container > span:first-child,
+  .about-page .about-hero-bottom > .page-container > span:last-child {
+    color: #493226 !important;
+  }
+}
+
+.about-page .about-art-center {
+  color: #FFFFFF !important;
+}
+
+.about-page .about-art-center *,
+.about-page .about-art-center span,
+.about-page .about-art-center p {
+  color: #FFFFFF !important;
 }
