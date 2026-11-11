@@ -4,7 +4,8 @@ import "./globals.css";
 
 import ScrollToTop from "@/components/ScrollToTop";
 import RouteScrollManager from "@/components/RouteScrollManager";
-import EventPopup from "@/components/EventPopup";
+import EventPopupGuard from "@/components/EventPopupGuard";
+import { SanityLive } from "@/sanity/lib/live";
 
 const siteUrl = "https://www.afrigenetrylink.org";
 
@@ -67,9 +68,10 @@ export default function RootLayout({
 
         {children}
 
-        <EventPopup />
+        <EventPopupGuard />
 
         <ScrollToTop />
+        <SanityLive />
       </body>
     </html>
   );
