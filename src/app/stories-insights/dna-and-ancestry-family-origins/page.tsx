@@ -1,221 +1,534 @@
+
 import type { Metadata } from "next";
+import type { PortableTextBlock } from "@portabletext/types";
+
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ArticleContent from "@/components/ArticleContent";
+import { getPublishedArticle } from "@/sanity/lib/articles";
 
 export const metadata: Metadata = {
   title: "DNA and Ancestry: Discover Family Origins | AfriGenetry Link",
-  description: "Understand how DNA testing, genealogy, and historical research can work together to explore family origins.",
-  alternates: { canonical: "/stories-insights/dna-and-ancestry-family-origins" },
+  description:
+    "Understand how DNA testing, genealogy, and historical research can work together to explore family origins.",
+  alternates: {
+    canonical: "/stories-insights/dna-and-ancestry-family-origins",
+  },
 };
 
-type Block = { type: "heading" | "paragraph" | "bullet"; text: string };
+type Block = {
+  type: "heading" | "paragraph" | "bullet";
+  text: string;
+};
+
+const title = "DNA and Ancestry: Discover Family Origins";
+
+const description =
+  "Understand how DNA testing, genealogy, and historical research can work together to explore family origins.";
+
+const sourceUrl =
+  "https://www.afrigenetrylink.org/post/dna-and-ancestry";
+
 const blocks: Block[] = [
   {
-    "type": "paragraph",
-    "text": "Hidden within your DNA is a biological record passed from generation to generation, carrying clues about your family's origins, migration patterns, and ancestral connections."
+    type: "paragraph",
+    text: "Hidden within your DNA is a biological record passed from generation to generation, carrying clues about your family's origins, migration patterns, and ancestral connections.",
   },
   {
-    "type": "paragraph",
-    "text": "When combined with genealogy research, historical records, and oral traditions, DNA becomes a powerful tool for uncovering family history and reconnecting with your heritage."
+    type: "paragraph",
+    text: "When combined with genealogy research, historical records, and oral traditions, DNA becomes a powerful tool for uncovering family history and reconnecting with your heritage.",
   },
   {
-    "type": "paragraph",
-    "text": "For many people of African descent, tracing family history can be particularly challenging because of historical events such as the transatlantic slave trade, colonial record gaps, forced migration, and incomplete documentation."
+    type: "paragraph",
+    text: "For many people of African descent, tracing family history can be particularly challenging because of historical events such as the transatlantic slave trade, colonial record gaps, forced migration, and incomplete documentation.",
   },
   {
-    "type": "paragraph",
-    "text": "Today, advances in DNA testing and genetic genealogy are helping individuals reconnect with their African roots and build a deeper understanding of their identity."
+    type: "paragraph",
+    text: "Today, advances in DNA testing and genetic genealogy are helping individuals reconnect with their African roots and build a deeper understanding of their identity.",
   },
   {
-    "type": "paragraph",
-    "text": "What Is DNA and Ancestry?"
+    type: "heading",
+    text: "What Is DNA and Ancestry?",
   },
   {
-    "type": "paragraph",
-    "text": "Genomic Health in Africa: The Complete Guide to DNA, Genomics, Genetic Testing, and Hereditary Diseases DNA (Deoxyribonucleic Acid) is the genetic material inherited from your parents."
+    type: "paragraph",
+    text: "DNA (Deoxyribonucleic Acid) is the genetic material inherited from your parents. It contains the biological instructions that influence inherited traits and preserves evidence of your ancestral history across thousands of years.",
   },
   {
-    "type": "paragraph",
-    "text": "It contains the biological instructions that influence inherited traits and preserves evidence of your ancestral history across thousands of years."
+    type: "paragraph",
+    text: "Genealogists and genetic scientists compare sections of DNA between individuals to identify shared ancestors, estimate ethnic origins, and discover living relatives.",
   },
   {
-    "type": "paragraph",
-    "text": "Genealogists and genetic scientists compare sections of DNA between individuals to identify shared ancestors, estimate ethnic origins, and discover living relatives."
+    type: "paragraph",
+    text: "Together, DNA analysis and family history research provide a more complete picture of your ancestral journey.",
   },
   {
-    "type": "paragraph",
-    "text": "Together, DNA analysis and family history research provide a more complete picture of your ancestral journey."
+    type: "heading",
+    text: "How DNA Helps Trace Your Ancestry",
   },
   {
-    "type": "paragraph",
-    "text": "How DNA Helps Trace Your Ancestry DNA testing can reveal information about your family history that traditional records alone may not uncover."
+    type: "paragraph",
+    text: "DNA testing can reveal information about your family history that traditional records alone may not uncover.",
   },
   {
-    "type": "paragraph",
-    "text": "It can help you: Discover ancestral regions Identify genetic relatives Reconstruct family trees Understand migration routes Explore ancient population movements Verify family relationships Support genealogical research Types of DNA Used in Ancestry Testing Understanding the different kinds of DNA tests can help you choose the right approach for your research."
+    type: "paragraph",
+    text: "It can help you:",
   },
   {
-    "type": "paragraph",
-    "text": "Autosomal DNA Autosomal DNA is inherited from both parents and provides information about relatives across recent generations."
+    type: "bullet",
+    text: "Discover ancestral regions",
   },
   {
-    "type": "paragraph",
-    "text": "It is commonly used to: Find cousins Estimate ethnicity Build family trees Identify shared ancestors Y-DNA Y-DNA follows the direct paternal line and is inherited from father to son."
+    type: "bullet",
+    text: "Identify genetic relatives",
   },
   {
-    "type": "paragraph",
-    "text": "It is useful for: Surname studies Paternal ancestry Ancient paternal migrations Haplogroup analysis Mitochondrial DNA (mtDNA) Mitochondrial DNA is inherited from your mother."
+    type: "bullet",
+    text: "Reconstruct family trees",
   },
   {
-    "type": "paragraph",
-    "text": "It helps researchers investigate: Maternal ancestry Ancient maternal lineages Human migration patterns Maternal haplogroups How DNA Testing Works Ethical DNA Use in Africa: Building Trust, Protecting Rights, and Advancing Genetic Equity Modern ancestry testing follows several steps."
+    type: "bullet",
+    text: "Understand migration routes",
   },
   {
-    "type": "paragraph",
-    "text": "Collect a DNA sample."
+    type: "bullet",
+    text: "Explore ancient population movements",
   },
   {
-    "type": "paragraph",
-    "text": "Analyze genetic markers."
+    type: "bullet",
+    text: "Verify family relationships",
   },
   {
-    "type": "paragraph",
-    "text": "Compare your DNA with reference populations."
+    type: "bullet",
+    text: "Support genealogical research",
   },
   {
-    "type": "paragraph",
-    "text": "Identify matching relatives."
+    type: "heading",
+    text: "Types of DNA Used in Ancestry Testing",
   },
   {
-    "type": "paragraph",
-    "text": "Estimate ancestral origins."
+    type: "paragraph",
+    text: "Understanding the different kinds of DNA tests can help you choose the right approach for your research.",
   },
   {
-    "type": "paragraph",
-    "text": "Generate ancestry reports."
+    type: "heading",
+    text: "Autosomal DNA",
   },
   {
-    "type": "paragraph",
-    "text": "These results become more meaningful when combined with historical documents and family stories."
+    type: "paragraph",
+    text: "Autosomal DNA is inherited from both parents and provides information about relatives across recent generations.",
   },
   {
-    "type": "paragraph",
-    "text": "Reference: A Global Reference for Human Genetic Variation Understanding African Ancestry Through DNA For individuals with African heritage, DNA testing offers opportunities to reconnect with ancestral communities and gain insights into regional origins."
+    type: "paragraph",
+    text: "It is commonly used to:",
   },
   {
-    "type": "paragraph",
-    "text": "Because Africa has the world's greatest genetic diversity, ancestry testing may reveal connections across multiple regions and populations."
+    type: "bullet",
+    text: "Find cousins",
   },
   {
-    "type": "paragraph",
-    "text": "Results can be influenced by the reference databases used by different testing providers, so interpreting them alongside genealogical evidence is important."
+    type: "bullet",
+    text: "Estimate ethnicity",
   },
   {
-    "type": "paragraph",
-    "text": "Reference: The Genomic Landscape of African Populations in Health and Disease The Role of Genealogy DNA does not replace genealogy—it complements it."
+    type: "bullet",
+    text: "Build family trees",
   },
   {
-    "type": "paragraph",
-    "text": "Genealogical research involves: Census records Birth certificates Marriage records Church records Immigration documents Oral histories Cemetery records Historical archives Combining these sources with DNA results creates a richer understanding of family history."
+    type: "bullet",
+    text: "Identify shared ancestors",
   },
   {
-    "type": "paragraph",
-    "text": "Building Your Family Tree Creating a family tree helps organize generations of information."
+    type: "heading",
+    text: "Y-DNA",
   },
   {
-    "type": "paragraph",
-    "text": "Begin by: Interviewing relatives Collecting family photographs Recording oral traditions Gathering official documents Adding DNA matches Verifying historical records Common Challenges Tracing ancestry is rewarding but can present obstacles."
+    type: "paragraph",
+    text: "Y-DNA follows the direct paternal line and is inherited from father to son.",
   },
   {
-    "type": "paragraph",
-    "text": "Challenges include: Missing historical records Name changes Adoption Unknown parentage Migration Colonial documentation gaps Incomplete African archives Careful research and multiple evidence sources can help overcome these issues."
+    type: "paragraph",
+    text: "It is useful for:",
   },
   {
-    "type": "paragraph",
-    "text": "Benefits of DNA and Ancestry Research Understanding your ancestry can: Strengthen family connections Preserve cultural heritage Support genealogical research Improve knowledge of family medical history Foster identity and belonging Encourage lifelong learning about your heritage Frequently Asked Questions Can DNA testing tell me exactly where my ancestors came from?"
+    type: "bullet",
+    text: "Surname studies",
   },
   {
-    "type": "paragraph",
-    "text": "DNA testing provides estimates based on reference populations and can identify likely ancestral regions."
+    type: "bullet",
+    text: "Paternal ancestry",
   },
   {
-    "type": "paragraph",
-    "text": "Combining DNA with historical records and family history generally leads to more reliable conclusions."
+    type: "bullet",
+    text: "Ancient paternal migrations",
   },
   {
-    "type": "paragraph",
-    "text": "Is DNA testing enough to build my family tree?"
+    type: "bullet",
+    text: "Haplogroup analysis",
   },
   {
-    "type": "paragraph",
-    "text": "DNA testing is most effective when used alongside genealogy research, historical documents, and oral histories."
+    type: "heading",
+    text: "Mitochondrial DNA (mtDNA)",
   },
   {
-    "type": "paragraph",
-    "text": "Why is African ancestry research challenging?"
+    type: "paragraph",
+    text: "Mitochondrial DNA is inherited from your mother.",
   },
   {
-    "type": "paragraph",
-    "text": "Historical events, incomplete records, and forced migrations have created gaps in documentation."
+    type: "paragraph",
+    text: "It helps researchers investigate:",
   },
   {
-    "type": "paragraph",
-    "text": "DNA analysis can help fill some of these gaps, but it works best in combination with traditional genealogical methods."
+    type: "bullet",
+    text: "Maternal ancestry",
   },
   {
-    "type": "paragraph",
-    "text": "How accurate are ancestry DNA tests?"
+    type: "bullet",
+    text: "Ancient maternal lineages",
   },
   {
-    "type": "paragraph",
-    "text": "Accuracy depends on the quality of the laboratory analysis, the size and diversity of the provider's reference database, and how results are interpreted."
+    type: "bullet",
+    text: "Human migration patterns",
   },
   {
-    "type": "paragraph",
-    "text": "Ethnicity estimates may change as databases grow."
+    type: "bullet",
+    text: "Maternal haplogroups",
   },
   {
-    "type": "paragraph",
-    "text": "Conclusion DNA and ancestry research offer powerful ways to explore family origins, reconnect with heritage, and preserve family stories for future generations."
+    type: "heading",
+    text: "How DNA Testing Works",
   },
   {
-    "type": "paragraph",
-    "text": "While DNA provides valuable genetic evidence, the most complete picture of your ancestry comes from combining genetic testing with genealogy, historical records, and oral traditions."
+    type: "paragraph",
+    text: "Modern ancestry testing follows several steps.",
   },
   {
-    "type": "paragraph",
-    "text": "Together, these approaches can help you uncover the remarkable journey of your ancestors and better understand your place within that story."
+    type: "bullet",
+    text: "Collect a DNA sample.",
   },
   {
-    "type": "paragraph",
-    "text": "References National Human Genome Research Institute."
+    type: "bullet",
+    text: "Analyze genetic markers.",
   },
   {
-    "type": "paragraph",
-    "text": "Learning About DNA. https://www.genome.gov National Library of Medicine."
+    type: "bullet",
+    text: "Compare your DNA with reference populations.",
   },
   {
-    "type": "paragraph",
-    "text": "MedlinePlus Genetics. https://medlineplus.gov/genetics/ ISOGG."
+    type: "bullet",
+    text: "Identify matching relatives.",
   },
   {
-    "type": "paragraph",
-    "text": "Genetic Genealogy Wiki. https://isogg.org Human Heredity and Health in Africa (H3Africa). https://h3africa.org UNESCO."
+    type: "bullet",
+    text: "Estimate ancestral origins.",
   },
   {
-    "type": "paragraph",
-    "text": "General History of Africa. https://www.unesco.org"
-  }
+    type: "bullet",
+    text: "Generate ancestry reports.",
+  },
+  {
+    type: "paragraph",
+    text: "These results become more meaningful when combined with historical documents and family stories.",
+  },
+  {
+    type: "heading",
+    text: "Understanding African Ancestry Through DNA",
+  },
+  {
+    type: "paragraph",
+    text: "For individuals with African heritage, DNA testing offers opportunities to reconnect with ancestral communities and gain insights into regional origins.",
+  },
+  {
+    type: "paragraph",
+    text: "Because Africa has the world's greatest genetic diversity, ancestry testing may reveal connections across multiple regions and populations.",
+  },
+  {
+    type: "paragraph",
+    text: "Results can be influenced by the reference databases used by different testing providers, so interpreting them alongside genealogical evidence is important.",
+  },
+  {
+    type: "heading",
+    text: "The Role of Genealogy",
+  },
+  {
+    type: "paragraph",
+    text: "DNA does not replace genealogy. It complements it.",
+  },
+  {
+    type: "paragraph",
+    text: "Genealogical research involves:",
+  },
+  {
+    type: "bullet",
+    text: "Census records",
+  },
+  {
+    type: "bullet",
+    text: "Birth certificates",
+  },
+  {
+    type: "bullet",
+    text: "Marriage records",
+  },
+  {
+    type: "bullet",
+    text: "Church records",
+  },
+  {
+    type: "bullet",
+    text: "Immigration documents",
+  },
+  {
+    type: "bullet",
+    text: "Oral histories",
+  },
+  {
+    type: "bullet",
+    text: "Cemetery records",
+  },
+  {
+    type: "bullet",
+    text: "Historical archives",
+  },
+  {
+    type: "paragraph",
+    text: "Combining these sources with DNA results creates a richer understanding of family history.",
+  },
+  {
+    type: "heading",
+    text: "Building Your Family Tree",
+  },
+  {
+    type: "paragraph",
+    text: "Creating a family tree helps organize generations of information.",
+  },
+  {
+    type: "paragraph",
+    text: "Begin by:",
+  },
+  {
+    type: "bullet",
+    text: "Interviewing relatives",
+  },
+  {
+    type: "bullet",
+    text: "Collecting family photographs",
+  },
+  {
+    type: "bullet",
+    text: "Recording oral traditions",
+  },
+  {
+    type: "bullet",
+    text: "Gathering official documents",
+  },
+  {
+    type: "bullet",
+    text: "Adding DNA matches",
+  },
+  {
+    type: "bullet",
+    text: "Verifying historical records",
+  },
+  {
+    type: "heading",
+    text: "Common Challenges",
+  },
+  {
+    type: "paragraph",
+    text: "Tracing ancestry is rewarding but can present obstacles.",
+  },
+  {
+    type: "paragraph",
+    text: "Challenges include:",
+  },
+  {
+    type: "bullet",
+    text: "Missing historical records",
+  },
+  {
+    type: "bullet",
+    text: "Name changes",
+  },
+  {
+    type: "bullet",
+    text: "Adoption",
+  },
+  {
+    type: "bullet",
+    text: "Unknown parentage",
+  },
+  {
+    type: "bullet",
+    text: "Migration",
+  },
+  {
+    type: "bullet",
+    text: "Colonial documentation gaps",
+  },
+  {
+    type: "bullet",
+    text: "Incomplete African archives",
+  },
+  {
+    type: "paragraph",
+    text: "Careful research and multiple evidence sources can help overcome these issues.",
+  },
+  {
+    type: "heading",
+    text: "Benefits of DNA and Ancestry Research",
+  },
+  {
+    type: "paragraph",
+    text: "Understanding your ancestry can:",
+  },
+  {
+    type: "bullet",
+    text: "Strengthen family connections",
+  },
+  {
+    type: "bullet",
+    text: "Preserve cultural heritage",
+  },
+  {
+    type: "bullet",
+    text: "Support genealogical research",
+  },
+  {
+    type: "bullet",
+    text: "Improve knowledge of family medical history",
+  },
+  {
+    type: "bullet",
+    text: "Foster identity and belonging",
+  },
+  {
+    type: "bullet",
+    text: "Encourage lifelong learning about your heritage",
+  },
+  {
+    type: "heading",
+    text: "Frequently Asked Questions",
+  },
+  {
+    type: "heading",
+    text: "Can DNA testing tell me exactly where my ancestors came from?",
+  },
+  {
+    type: "paragraph",
+    text: "DNA testing provides estimates based on reference populations and can identify likely ancestral regions.",
+  },
+  {
+    type: "paragraph",
+    text: "Combining DNA with historical records and family history generally leads to more reliable conclusions.",
+  },
+  {
+    type: "heading",
+    text: "Is DNA testing enough to build my family tree?",
+  },
+  {
+    type: "paragraph",
+    text: "DNA testing is most effective when used alongside genealogy research, historical documents, and oral histories.",
+  },
+  {
+    type: "heading",
+    text: "Why is African ancestry research challenging?",
+  },
+  {
+    type: "paragraph",
+    text: "Historical events, incomplete records, and forced migrations have created gaps in documentation.",
+  },
+  {
+    type: "paragraph",
+    text: "DNA analysis can help fill some of these gaps, but it works best in combination with traditional genealogical methods.",
+  },
+  {
+    type: "heading",
+    text: "How accurate are ancestry DNA tests?",
+  },
+  {
+    type: "paragraph",
+    text: "Accuracy depends on the quality of the laboratory analysis, the size and diversity of the provider's reference database, and how results are interpreted.",
+  },
+  {
+    type: "paragraph",
+    text: "Ethnicity estimates may change as databases grow.",
+  },
+  {
+    type: "heading",
+    text: "Conclusion",
+  },
+  {
+    type: "paragraph",
+    text: "DNA and ancestry research offer powerful ways to explore family origins, reconnect with heritage, and preserve family stories for future generations.",
+  },
+  {
+    type: "paragraph",
+    text: "While DNA provides valuable genetic evidence, the most complete picture of your ancestry comes from combining genetic testing with genealogy, historical records, and oral traditions.",
+  },
+  {
+    type: "paragraph",
+    text: "Together, these approaches can help you uncover the remarkable journey of your ancestors and better understand your place within that story.",
+  },
+  {
+    type: "heading",
+    text: "References",
+  },
+  {
+    type: "paragraph",
+    text: "National Human Genome Research Institute. Learning About DNA. https://www.genome.gov",
+  },
+  {
+    type: "paragraph",
+    text: "National Library of Medicine. MedlinePlus Genetics. https://medlineplus.gov/genetics/",
+  },
+  {
+    type: "paragraph",
+    text: "ISOGG. Genetic Genealogy Wiki. https://isogg.org",
+  },
+  {
+    type: "paragraph",
+    text: "Human Heredity and Health in Africa (H3Africa). https://h3africa.org",
+  },
+  {
+    type: "paragraph",
+    text: "UNESCO. General History of Africa. https://www.unesco.org",
+  },
 ];
 
-export default function ArticlePage() {
+export default async function ArticlePage() {
+  let sanityArticle = null;
+
+  try {
+    sanityArticle = await getPublishedArticle(
+      "dna-and-ancestry-family-origins"
+    );
+  } catch (error) {
+    console.error("Sanity article fetch failed:", error);
+  }
+
+  const article = sanityArticle?.body?.length
+    ? {
+        title: sanityArticle.title,
+        description: sanityArticle.excerpt,
+        body: sanityArticle.body as PortableTextBlock[],
+        coverImage: sanityArticle.coverImage,
+      }
+    : {
+        title,
+        description,
+        sourceUrl,
+        blocks,
+      };
+
   return (
     <>
       <SiteHeader />
+
       <main>
-        <ArticleContent article={{ title: "DNA and Ancestry: Discover Family Origins", description: "Understand how DNA testing, genealogy, and historical research can work together to explore family origins.", sourceUrl: "https://www.afrigenetrylink.org/post/dna-and-ancestry", blocks }} />
+        <ArticleContent article={article} />
       </main>
+
       <SiteFooter />
     </>
   );
